@@ -25,24 +25,40 @@ const books = RECORDS.filter((r) => r.ownerSlug === owner.slug).map((r) => ({ id
           <div style="margin-top:8px;font:400 14.5px/1.4 var(--serif);color:var(--ink)">{owner.dbNote} <span style="color:var(--ac)">↗</span></div>
         </div>
 
-        <div style="margin-top:26px;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)">Their books at Penn</div>
+        <div style="margin-top:26px;display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+          <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)">The recovered volumes</span>
+          <span style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--fn)">bearing his stamp in the register</span>
+        </div>
         {books.length > 0 ? (
           <div style="margin-top:12px;border-top:1px solid rgba(var(--inkrgb),.14)">
             {books.map((b) => (
-              <a href={urls.record(b.id)} style="text-decoration:none;border-bottom:1px solid rgba(var(--inkrgb),.12);padding:13px 4px;display:flex;justify-content:space-between;gap:16px;align-items:baseline">
-                <span style="font:400 15px/1.35 var(--serif);color:var(--ink)">{b.title}</span>
+              <a href={urls.record(b.id)} style="text-decoration:none;border-bottom:1px solid rgba(var(--inkrgb),.12);padding:12px 4px;display:flex;justify-content:space-between;gap:16px;align-items:baseline">
+                <span style="font:400 14.5px/1.35 var(--serif);color:var(--ink)">{b.title}</span>
                 <span style="font:400 16px/1 var(--serif);color:var(--ac)">→</span>
               </a>
             ))}
           </div>
         ) : (
-          <p style="margin:12px 0 0;font:400 14.5px/1.6 var(--serif);font-style:italic;color:var(--mut)">Their individual volumes are still being linked into the register; the grouping is recorded on the Lithuanian sheet.</p>
+          <p style="margin:12px 0 0;font:400 14.5px/1.6 var(--serif);font-style:italic;color:var(--mut)">Their individual volumes are still being linked into the register.</p>
         )}
       </div>
 
       <aside>
-        <div style="height:200px;border:1px solid rgba(var(--inkrgb),.16);border-radius:3px;background-image:repeating-linear-gradient(-45deg,#eae5da,#eae5da 8px,#f2eee5 8px,#f2eee5 16px);display:flex;align-items:flex-end;padding:12px">
-          <span style="font:400 10.5px/1.5 'IBM Plex Mono',monospace;color:var(--fn3)">their ownership<br>stamp — photograph</span>
+        {owner.recovered && owner.known && (
+          <div style="padding:20px 22px;background:var(--sf);border:1px solid rgba(var(--inkrgb),.14);border-radius:5px">
+            <div style="display:flex;align-items:baseline;gap:6px">
+              <span style="font:400 46px/1 var(--serif);color:var(--ink);letter-spacing:-.01em">{owner.recovered}</span>
+              <span style="font:400 22px/1 var(--serif);color:var(--fn3)">/ {owner.known}</span>
+            </div>
+            <div style="margin-top:8px;font:500 12px/1.45 var(--sans);color:var(--mut)">books recovered, of the {owner.known} known to have been in his library</div>
+            <div style="margin-top:14px;height:8px;border-radius:4px;background:rgba(var(--inkrgb),.1);overflow:hidden">
+              <div style={`height:100%;width:${Math.round((owner.recovered / owner.known) * 100)}%;background:var(--ac)`}></div>
+            </div>
+            <div style="margin-top:8px;font:400 11px/1 'IBM Plex Mono',monospace;color:var(--fn)">{Math.round((owner.recovered / owner.known) * 100)}% of the library, together</div>
+          </div>
+        )}
+        <div style="margin-top:16px;height:180px;border:1px solid rgba(var(--inkrgb),.16);border-radius:3px;background-image:repeating-linear-gradient(-45deg,#eae5da,#eae5da 8px,#f2eee5 8px,#f2eee5 16px);display:flex;align-items:flex-end;padding:12px">
+          <span style="font:400 10.5px/1.5 'IBM Plex Mono',monospace;color:var(--fn3)">his ownership<br>stamp — photograph</span>
         </div>
       </aside>
     </div>

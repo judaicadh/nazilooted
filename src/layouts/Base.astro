@@ -5,7 +5,7 @@ import { urls } from '../data/looted';
 export interface Props {
   title: string;
   crumb: string;
-  active?: 'markings' | 'cases' | 'register' | 'sources' | 'about' | null;
+  active?: 'markings' | 'stories' | 'register' | 'sources' | 'about' | null;
 }
 
 const { title, crumb, active = null } = Astro.props;
@@ -15,7 +15,7 @@ const nav = (isActive: boolean) =>
 
 const items: { label: string; href: string; key: NonNullable<Props['active']> }[] = [
   { label: 'Identify a book', href: urls.markings, key: 'markings' },
-  { label: 'How they were found', href: urls.cases, key: 'cases' },
+  { label: 'How they were found', href: urls.cases, key: 'stories' },
   { label: 'Browse the books', href: urls.register, key: 'register' },
   { label: 'Sources & lists', href: urls.sources, key: 'sources' },
 ];
