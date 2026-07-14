@@ -32,6 +32,10 @@ button { font-family: inherit; }
 ::-webkit-scrollbar { width: 11px; height: 11px; }
 ::-webkit-scrollbar-thumb { background: rgba(var(--inkrgb), .22); border-radius: 6px; }
 
+/* Bookshelf spines */
+.shelf-spine { transition: transform .12s ease, filter .12s ease; }
+.shelf-spine:hover { transform: translateY(-8px); filter: brightness(1.08); outline: 1.5px solid var(--ac); position: relative; z-index: 2; }
+
 /* About dropdown */
 .about-menu summary { list-style: none; }
 .about-menu summary::-webkit-details-marker { display: none; }
