@@ -1,0 +1,24 @@
+---
+import { urls } from '../data/looted';
+
+export interface Props {
+  active: 'scope' | 'method' | 'steps' | 'gaps' | 'claims';
+}
+const { active } = Astro.props;
+
+const items = [
+  { label: 'Scope', href: urls.about, key: 'scope' },
+  { label: 'The method', href: urls.method, key: 'method' },
+  { label: 'The five steps', href: urls.steps, key: 'steps' },
+  { label: 'What we cannot account for', href: urls.gaps, key: 'gaps' },
+  { label: 'Restitution & claims', href: urls.claims, key: 'claims' },
+];
+---
+<nav style="display:flex;flex-wrap:wrap;gap:9px 20px;margin:0 0 30px;padding-bottom:16px;border-bottom:1px solid rgba(var(--inkrgb),.14)">
+  {items.map((it) => (
+    <a
+      href={it.href}
+      style={`font:${active === it.key ? 500 : 400} 12.5px/1 var(--sans);color:${active === it.key ? 'var(--ink)' : 'var(--ac)'};text-decoration:none;border-bottom:2px solid ${active === it.key ? 'var(--ac)' : 'transparent'};padding-bottom:3px`}
+    >{it.label}</a>
+  ))}
+</nav>

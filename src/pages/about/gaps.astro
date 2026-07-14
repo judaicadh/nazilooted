@@ -1,16 +1,20 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AboutNav from '../../components/AboutNav.astro';
 
 const rows = [
   { big: '2,391–5,549', head: 'The totals never agreed', body: 'A JCR distribution document (July 1949–Jan 1952) records 5,549 books sent to Dropsie; Dropsie’s own records from the same years give either 2,391 or 2,591, and no list of the titles received has been found. We hold more than 2,100; the distance to even the low figure is unaccounted for — dispersed, destroyed, or shelved unrecognised.' },
   { big: '~430', head: 'Lithuanian books with almost no stamp evidence', body: 'Of more than four hundred books mostly from Lithuania, only two carry an OAD stamp and none a Nazi stamp. They were never restituted — the United States did not recognise the Soviet annexation of the Baltic states — so their owners must be traced through victim databases rather than marks in the book.' },
+  { big: 'tens of thousands', head: 'Records thrown out in a software migration', body: 'When the former Dropsie collection moved into Penn’s NOTIS system in the 1990s — which could not display Hebrew — the old Aleph records were discarded, and tens of thousands of books became undiscoverable. Most have since been re-identified in “Find,” but among them was a sizeable number of looted books that surfaced only recently.' },
+  { big: '16 shelves', head: 'Never cataloged, never searched', body: 'Sixteen shelves on level B2 — previously uncataloged Hebrew titles — still have no accession numbers and have never been read against the databases. They must be cataloged before any looted books among them can enter the register.' },
   { big: '~250–300', head: '“Maybe” cases not yet placed', body: 'Books with a faint mark, an ambiguous inscription, or a catalog note but no surviving stamp. Held in a working list, not yet in the register.' },
-  { big: 'unknown', head: 'Shelves never surveyed', body: 'The identification came from shelf-reading. Whole classes of the collection have not yet been read against the databases. We cannot state how many looted books remain unread — only that some do.' },
+  { big: '6 → 5', head: 'Rare manuscripts: six received, five found', body: 'A JCR report and the accession list record that Dropsie received six rare manuscripts; five have been located and are in the register. The sixth is unaccounted for.' },
 ];
 ---
 <Base title="What we cannot account for — Nazi Looted Books" crumb="/about/gaps/" active="about">
   <div style="max-width:720px">
-    <h1 style="margin:14px 0 0;font:400 33px/1.05 var(--display);text-transform:uppercase;letter-spacing:.02em">What we cannot account for</h1>
+    <AboutNav active="gaps" />
+    <h1 style="margin:0;font:400 33px/1.05 var(--display);text-transform:uppercase;letter-spacing:.02em">What we cannot account for</h1>
     <p style="margin:20px 0 0;font:400 18px/1.6 var(--serif);color:var(--ink)">Most institutional registers stop at what they hold. This one keeps a page for what it does not. The numbers below are not failures to hide in a footnote; they are part of the record.</p>
 
     <div style="margin-top:34px;border-top:1px solid rgba(var(--inkrgb),.14)">
@@ -24,6 +28,10 @@ const rows = [
         </div>
       ))}
     </div>
+
+    <h2 style="margin:36px 0 0;font:500 13px/1 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)">Where the Baltic books went</h2>
+    <p style="margin:14px 0 0;font:400 16px/1.65 var(--serif);color:var(--ink)">The Lithuanian books came a different way. Recovered from the Baltic states but never restituted, they were released to the JCR only in July 1949. The JCR shipped 214 cases of about 29,000 books: 78 cases (12,418 books) to Israel, and 136 cases (16,346 books) to an AJDC warehouse in Paris for a two-year trusteeship, during which it advertised 16,000 owners’ names in the hope of claims. When the trusteeship ended, the remainder was divided 40:40:20 between Israel, the Western Hemisphere, and everywhere else. The books now at the Katz Center are a fragment of that dispersal.</p>
+
     <p style="margin:26px 0 0;font:400 15px/1.6 var(--serif);font-style:italic;color:var(--mut)">This is a page you can cite. If you are searching for a specific book and do not find it here, its absence may mean it was never sent, or it may mean we have not found it yet. We would rather you know which.</p>
   </div>
 </Base>

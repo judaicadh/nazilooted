@@ -1,10 +1,12 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AboutNav from '../../components/AboutNav.astro';
 import { urls } from '../../data/looted';
 ---
 <Base title="Restitution & claims — Nazi Looted Books" crumb="/about/claims/" active="about">
   <div style="max-width:680px">
-    <h1 style="margin:14px 0 0;font:400 33px/1.05 var(--display);text-transform:uppercase;letter-spacing:.02em">Restitution &amp; claims</h1>
+    <AboutNav active="claims" />
+    <h1 style="margin:0;font:400 33px/1.05 var(--display);text-transform:uppercase;letter-spacing:.02em">Restitution &amp; claims</h1>
     <p style="margin:20px 0 0;font:400 18px/1.6 var(--serif);color:var(--ink)">The Penn Libraries hold these books in trust, not by right. Where a rightful owner or heir can be identified, we will work toward return or a mutually agreed arrangement.</p>
 
     <div style="margin-top:30px;padding:22px 24px;background:var(--sf);border:1px solid rgba(var(--inkrgb),.14);border-radius:4px">

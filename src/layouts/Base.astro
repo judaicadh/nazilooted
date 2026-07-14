@@ -14,10 +14,10 @@ const nav = (isActive: boolean) =>
   `appearance:none;background:none;border:none;padding:0 0 3px;cursor:pointer;font:${isActive ? 500 : 400} 12.5px/1 var(--sans);color:${isActive ? 'var(--ink)' : 'var(--mut)'};border-bottom:2px solid ${isActive ? 'var(--ac)' : 'transparent'}`;
 
 const items: { label: string; href: string; key: NonNullable<Props['active']> }[] = [
-  { label: 'Markings guide', href: urls.markings, key: 'markings' },
-  { label: 'Cases', href: urls.cases, key: 'cases' },
-  { label: 'Register', href: urls.register, key: 'register' },
-  { label: 'Sources', href: urls.sources, key: 'sources' },
+  { label: 'Identify a book', href: urls.markings, key: 'markings' },
+  { label: 'How they were found', href: urls.cases, key: 'cases' },
+  { label: 'Browse the books', href: urls.register, key: 'register' },
+  { label: 'Sources & lists', href: urls.sources, key: 'sources' },
   { label: 'About', href: urls.about, key: 'about' },
 ];
 ---
@@ -44,7 +44,7 @@ const items: { label: string; href: string; key: NonNullable<Props['active']> }[
             <span style="font:600 18px/1 var(--display);letter-spacing:.055em;text-transform:uppercase;color:var(--ink)">Nazi Looted Books</span>
             <span style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)">at Penn Libraries</span>
           </a>
-          <nav style="display:flex;gap:22px">
+          <nav style="display:flex;flex-wrap:wrap;gap:12px 22px">
             {items.map((it) => (
               <a href={it.href} style={nav(active === it.key)}>{it.label}</a>
             ))}
@@ -62,7 +62,7 @@ const items: { label: string; href: string; key: NonNullable<Props['active']> }[
 
       <footer style="border-top:1px solid rgba(var(--inkrgb),.14);background:var(--sf2)">
         <div style="max-width:1180px;margin:0 auto;padding:22px 40px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font:400 11.5px/1.5 'IBM Plex Mono',monospace;color:var(--fn)">
-          <span>Penn Libraries · Provenance of looted books · prototype</span>
+          <span>Provenance research &amp; text: Bruce Nielsen · Penn Libraries, Katz Center for Advanced Judaic Studies</span>
           <span>Uncertainty in this record is shown, not hidden.</span>
         </div>
       </footer>
