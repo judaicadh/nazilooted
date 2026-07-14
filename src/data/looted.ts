@@ -74,6 +74,8 @@ export interface Owner {
   bio: string;
   dbNote: string;
   bookIds: string[];
+  recovered?: number;
+  known?: number;
 }
 
 export interface AnatomyMark { name: string; note: string; }
@@ -177,7 +179,7 @@ export const SOURCE_CATS = ['all', 'victims', 'shipping', 'bibliographic', 'refe
 // Kremer's volumes are the pink-flagged rows of the Lithuanian sheet; their
 // records carry ownerSlug 'mordecai-kremer', so the owner page lists them live.
 export const OWNERS: Record<string, Owner> = {
-  'mordecai-kremer': { slug: 'mordecai-kremer', name: 'Rabbi Mordecai Kremer (Kaunas)', bio: 'A rabbi of Kaunas (Kovno), Lithuania, whose personal library the Nazis seized. The Katz Center holds roughly 118 of the 162 known books from it — one of five cases where more than seventy percent of an identified personal library survived, together, in this collection. His stamped volumes are flagged on the Lithuanian sheet of the register.', dbNote: 'Kremer ownership stamps, cross-referenced against the Offenbach monthly processing lists', bookIds: [] },
+  'kaunas-rabbi': { slug: 'kaunas-rabbi', name: 'Rabbi Mordecai Kremer of Kaunas', recovered: 118, known: 162, bio: 'A rabbi of Kaunas (Kovno), Lithuania, whose personal library the Nazis seized. The Katz Center has recovered roughly 118 of the 162 known books from it — one of five personal libraries of which more than seventy percent survived, together, in this collection. His stamped volumes are the pink-flagged rows of the Lithuanian sheet.', dbNote: 'Kremer ownership stamps, cross-referenced against the Offenbach monthly processing lists', bookIds: [] },
 };
 
 export const TIERS: Record<TierKey, { label: string; order: number }> = {
