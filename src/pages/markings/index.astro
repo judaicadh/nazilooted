@@ -7,7 +7,9 @@ const thumb = (hue: number) =>
 ---
 <Base title="The markings — Nazi Looted Books" crumb="/markings/" active="markings">
   <h1 style="margin:14px 0 0;font:400 33px/1.05 var(--display);text-transform:uppercase;letter-spacing:.02em">The markings</h1>
-  <p style="margin:16px 0 0;max-width:640px;font:400 16.5px/1.55 var(--serif);color:var(--mut)">Every kind of mark found in these books, and how often it appears across the Penn holdings. For where in the book each one turns up — including the places nobody looks — see <a href={urls.anatomy}>where to look</a>.</p>
+  <p style="margin:16px 0 0;max-width:660px;font:400 16.5px/1.55 var(--serif);color:var(--mut)">Every kind of mark found in these books, and how often it appears across the holdings. For where in the book each one turns up — including the places nobody looks — see <a href={urls.anatomy}>where to look</a>.</p>
+
+  <p style="margin:14px 0 0;max-width:660px;font:400 14.5px/1.6 var(--serif);color:var(--mut)">There are three principal forms of provenance evidence — an <strong style="font-weight:500;color:var(--ink)">OAD stamp</strong>, a <strong style="font-weight:500;color:var(--ink)">JCR bookplate</strong>, and a <strong style="font-weight:500;color:var(--ink)">gutter source note</strong> — and a book may carry all three, or only one. On top of these, a book may bear one of more than a dozen Nazi confiscation stamps from the two offices that did the looting: the ERR (Rosenberg’s task force, gathering books for a planned institute in Frankfurt) and the RSHA (the SS security office that competed with it). A Nazi stamp alone is enough to prove a book was looted. RSHA stamps are essentially absent from this collection; the Nazi mark that does appear is the ERR’s.</p>
 
   <div style="margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
     {MARKINGS.map((m) => (

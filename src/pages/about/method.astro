@@ -1,10 +1,12 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AboutNav from '../../components/AboutNav.astro';
 import { urls } from '../../data/looted';
 ---
 <Base title="The method — Nazi Looted Books" crumb="/about/method/" active="about">
   <div style="max-width:680px">
-    <h1 style="margin:14px 0 0;font:400 33px/1.05 var(--display);text-transform:uppercase;letter-spacing:.02em">The method</h1>
+    <AboutNav active="method" />
+    <h1 style="margin:0;font:400 33px/1.05 var(--display);text-transform:uppercase;letter-spacing:.02em">The method</h1>
     <p style="margin:20px 0 0;font:400 18px/1.6 var(--serif);color:var(--ink)">The identification did not begin with a database. It began with shelves, read one binding at a time, over fifteen years. What follows separates the two ways that work is told: as a manual you can act on, and as the cases where it was learned.</p>
 
     <div style="margin-top:30px;display:grid;gap:16px">

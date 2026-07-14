@@ -105,7 +105,7 @@ export const MARKINGS: Mark[] = [
     obscured: 'in deep gutter shadow', note: 'The source date alone can place a book: western European volumes are dated 1949–1951, Baltic ones always 1952 — never the reverse. Easy to miss unless the book is opened flat.',
     bodyFull: 'Dropsie accessioning, via JCR', bencowitz: '—' },
   { slug: 'err', name: 'ERR stamp', body: 'Einsatzstab Reichsleiter Rosenberg', where: 'Title page and front pastedown', count: 4, hue: 20,
-    desc: 'The mark of the Nazi task force that systematically looted Jewish libraries. Over a dozen sub-variants exist; the eagle-and-code forms are the most recognisable.',
+    desc: 'The mark of Rosenberg’s task force, which looted Jewish libraries to stock a planned institute in Frankfurt. Over a dozen sub-variants exist; the form seen in these books is “Sichergestellt durch Einsatzstab RR Reval” — secured by the ERR at Reval (Tallinn).',
     obscured: 'ink-cancelled after the war', note: 'One of more than a dozen distinct Nazi confiscation stamps recorded in these books; the ERR competed with the RSHA for the same libraries.',
     bodyFull: 'Einsatzstab Reichsleiter Rosenberg (ERR)', bencowitz: 'Bencowitz, Library Markings (1946), NLI' },
   { slug: 'pohl', name: 'Johannes Pohl pastedown', body: 'ERR (Pohl)', where: 'Inside the upper board', count: 41, hue: 20,
@@ -159,11 +159,17 @@ export const CASES: Case[] = [
 
 export const SOURCES: Source[] = [
   { name: 'Yad Vashem — Names Database', type: 'victims', region: 'international', question: 'Who owned this book?' },
-  { name: 'USHMM Resource Center', type: 'victims', region: 'international', question: 'Who owned this book?' },
-  { name: 'OAD monthly reports (NARA)', type: 'shipping', region: 'Germany / U.S.', question: 'Was it sent here, and when?' },
-  { name: 'Freidus card catalog (Dropsie)', type: 'bibliographic', region: 'Philadelphia', question: 'Was it ours before the war?' },
-  { name: 'Bencowitz, Stamps (1946)', type: 'reference', region: 'Germany', question: 'What stamp is this?' },
-  { name: 'JDC Archives', type: 'displaced persons', region: 'Europe', question: 'Where did it travel after?' },
+  { name: 'USHMM — Survivors & Victims Database', type: 'victims', region: 'international', question: 'Who owned this book?' },
+  { name: 'Bundesarchiv Gedenkbuch', type: 'victims', region: 'Germany', question: 'Who was the owner, and their fate?' },
+  { name: 'Looted Cultural Assets', type: 'victims', region: 'Germany', question: 'Whose bookplate is this?' },
+  { name: 'JewishGen — Yizkor & community lists', type: 'victims', region: 'Eastern Europe', question: 'Which community, and who lived there?' },
+  { name: 'OAD monthly reports (NARA / fold3)', type: 'shipping', region: 'Germany / U.S.', question: 'Was it sent here, and when?' },
+  { name: 'OAD list — 582 Jewish libraries (Sep 1946)', type: 'shipping', region: 'Germany', question: 'Which institution held it? (58,667 books)' },
+  { name: 'OAD list — 35 libraries (Jul 1946)', type: 'shipping', region: 'Germany', question: 'Which institution held it? (33,499 books)' },
+  { name: '“Privately-owned Book Collections,” Wiesbaden (1949)', type: 'shipping', region: 'Germany', question: 'Whose private library was it?' },
+  { name: 'Freidus Classification Shelf List (Dropsie)', type: 'bibliographic', region: 'Philadelphia', question: 'Was it sourced as a JCR gift?' },
+  { name: 'Rare-manuscripts accession list (Dropsie)', type: 'bibliographic', region: 'Philadelphia', question: 'Did the manuscript come from JCR?' },
+  { name: 'Bencowitz, Library Markings (1946), NLI', type: 'reference', region: 'Offenbach', question: 'What stamp is this?' },
 ];
 export const SOURCE_CATS = ['all', 'victims', 'shipping', 'bibliographic', 'reference'];
 
