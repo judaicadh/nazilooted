@@ -283,4 +283,5 @@ export const urls = {
   owners: '/owners/',
   owner: (slug: string) => `/owners/${slug}/`,
   sources: '/sources/',
+  shelf: '/shelf/',
 };

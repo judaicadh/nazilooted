@@ -1,0 +1,47 @@
+---
+import { RECORDS, SERIES, urls } from '../data/looted';
+
+// Spine colour by collection (hue) and confidence (lightness — darker = stronger).
+const HUE: Record<string, number> = {
+  western: 45, lithuanian: 152, inferred: 262, 'loc-exchange': 22, 'card-catalog': 322, manuscripts: 96,
+};
+const L: Record<string, number> = { direct: 0.52, namelist: 0.64, context: 0.74, possible: 0.83 };
+
+// deterministic per-spine variation so the shelf looks like real books
+function hash(s: string): number {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+  return h;
+}
+
+const order = ['western', 'lithuanian', 'inferred', 'loc-exchange', 'card-catalog', 'manuscripts'];
+const groups = order
+  .map((k) => ({ key: k, label: SERIES[k], items: RECORDS.filter((r) => r.series === k) }))
+  .filter((g) => g.items.length);
+---
+<div>
+  {groups.map((g) => (
+    <section style="margin-top:30px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px">
+        <span style="font:500 12px/1 'IBM Plex Mono',monospace;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)">{g.label}</span>
+        <span style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--fn)">{g.items.length} volumes</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px;padding:18px 10px 0;border-bottom:7px solid rgba(var(--inkrgb),.55);box-shadow:0 7px 12px -7px rgba(var(--inkrgb),.5)">
+        {g.items.map((r) => {
+          const h = hash(r.id);
+          const height = 84 + (h % 48);
+          const width = 5 + ((h >> 3) % 5);
+          const bg = `oklch(${L[r.tier] ?? 0.72} 0.05 ${HUE[g.key]})`;
+          return (
+            <a
+              class="shelf-spine"
+              href={urls.record(r.id)}
+              title={`${r.call ?? r.id}${r.title && r.title !== r.call ? ' — ' + r.title : ''} · ${r.tier}`}
+              style={`display:block;width:${width}px;height:${height}px;background:${bg};border:1px solid rgba(var(--inkrgb),.22);border-bottom:none;border-radius:2px 2px 0 0`}
+            ></a>
+          );
+        })}
+      </div>
+    </section>
+  ))}
+</div>
