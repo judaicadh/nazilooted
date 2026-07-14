@@ -97,6 +97,7 @@ const tierDot = (t: string) => {
             data-owner={r.owner ? '1' : '0'}
             data-catalog={r.inCatalog ? '1' : '0'}
             data-text={`${r.title} ${r.owner || ''} ${r.city} ${r.country} ${r.id}`.toLowerCase()}
+            class="stack-xs"
             style="text-decoration:none;border-bottom:1px solid rgba(var(--inkrgb),.12);padding:16px 4px;display:grid;grid-template-columns:1fr 190px;gap:20px;align-items:baseline"
           >
             <div style={leftBorder(r.tier)}>
