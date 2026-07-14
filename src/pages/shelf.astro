@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import Bookshelf from '../components/Bookshelf.astro';
+import { urls, RECORDS, TIERS } from '../data/looted';
+
+const tierShade: Record<string, number> = { direct: 0.52, namelist: 0.64, context: 0.74, possible: 0.83 };
+---
+<Base title="The shelf — Nazi Looted Books" crumb="/shelf/" active="register">
+  <h1 style="margin:14px 0 0;font:400 33px/1.05 var(--display);text-transform:uppercase;letter-spacing:.02em">The shelf</h1>
+  <p style="margin:16px 0 0;max-width:660px;font:400 16.5px/1.55 var(--serif);color:var(--mut)">Every book in the register — {RECORDS.length.toLocaleString()} in all — as a spine on the shelf it belongs to. Colour marks the collection; the darker the spine, the stronger the evidence. Hover for the call number, click to open the record. Or <a href={urls.register}>browse the register as a list</a>.</p>
+
+  <div style="margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center">
+    <span style="font:500 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--fn)">Evidence</span>
+    {Object.keys(TIERS).map((t) => (
+      <span style="display:flex;align-items:center;gap:7px">
+        <span style={`width:12px;height:16px;border-radius:2px;border:1px solid rgba(var(--inkrgb),.22);background:oklch(${tierShade[t]} 0.05 262)`}></span>
+        <span style="font:400 12px/1 var(--sans);color:var(--mut)">{TIERS[t as keyof typeof TIERS].label}</span>
+      </span>
+    ))}
+  </div>
+
+  <Bookshelf />
+</Base>
