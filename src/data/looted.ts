@@ -66,6 +66,7 @@ export interface Source {
   type: string;
   region: string;
   question: string;
+  url?: string;
 }
 
 export interface Owner {
