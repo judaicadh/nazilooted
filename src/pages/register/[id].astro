@@ -18,7 +18,7 @@ const tierBoxStyle = 'margin-top:26px;padding:18px 20px;border-radius:4px;' +
 
     <div style="margin-top:16px;display:flex;justify-content:space-between;align-items:flex-start;gap:24px">
       <div>
-        <div style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--fn)">Register no. {record.id}</div>
+        <div style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--fn)">Call no. {record.call ?? record.catalog}</div>
         <h1 style="margin:8px 0 0;font:400 30px/1.22 var(--serif);letter-spacing:-.01em;max-width:560px;text-wrap:pretty">{record.title}</h1>
         <div style="margin-top:8px;font:400 15px/1.5 var(--serif);color:var(--mut)">{record.bib}</div>
       </div>
