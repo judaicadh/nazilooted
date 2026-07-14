@@ -31,3 +31,9 @@ button { font-family: inherit; }
 ::selection { background: rgba(var(--acrgb), .18); }
 ::-webkit-scrollbar { width: 11px; height: 11px; }
 ::-webkit-scrollbar-thumb { background: rgba(var(--inkrgb), .22); border-radius: 6px; }
+
+/* About dropdown */
+.about-menu summary { list-style: none; }
+.about-menu summary::-webkit-details-marker { display: none; }
+.about-menu summary::marker { content: ''; }
+.about-menu > div a:hover { background: rgba(var(--acrgb), .1); color: var(--ink); text-decoration: none; }

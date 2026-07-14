@@ -18,8 +18,17 @@ const items: { label: string; href: string; key: NonNullable<Props['active']> }[
   { label: 'How they were found', href: urls.cases, key: 'cases' },
   { label: 'Browse the books', href: urls.register, key: 'register' },
   { label: 'Sources & lists', href: urls.sources, key: 'sources' },
-  { label: 'About', href: urls.about, key: 'about' },
 ];
+
+const aboutLinks = [
+  { label: 'Scope', href: urls.about },
+  { label: 'The method', href: urls.method },
+  { label: 'The five steps', href: urls.steps },
+  { label: 'What we cannot account for', href: urls.gaps },
+  { label: 'Where to look', href: urls.anatomy },
+];
+const aboutActive = active === 'about';
+const dropItem = 'display:block;padding:8px 12px;border-radius:5px;font:400 13px/1.35 var(--sans);color:var(--ink);text-decoration:none;white-space:nowrap';
 ---
 <html lang="en">
   <head>
@@ -44,10 +53,16 @@ const items: { label: string; href: string; key: NonNullable<Props['active']> }[
             <span style="font:600 18px/1 var(--display);letter-spacing:.055em;text-transform:uppercase;color:var(--ink)">Nazi Looted Books</span>
             <span style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)">at Penn Libraries</span>
           </a>
-          <nav style="display:flex;flex-wrap:wrap;gap:12px 22px">
+          <nav style="display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 22px">
             {items.map((it) => (
               <a href={it.href} style={nav(active === it.key)}>{it.label}</a>
             ))}
+            <details class="about-menu" style="position:relative">
+              <summary style={`${nav(aboutActive)};cursor:pointer;list-style:none`}>About ▾</summary>
+              <div style="position:absolute;right:0;top:calc(100% + 10px);min-width:230px;background:var(--pp);border:1px solid rgba(var(--inkrgb),.18);border-radius:7px;box-shadow:0 8px 24px rgba(var(--inkrgb),.16);padding:6px;z-index:40;display:flex;flex-direction:column;gap:1px">
+                {aboutLinks.map((l) => (<a href={l.href} style={dropItem}>{l.label}</a>))}
+              </div>
+            </details>
           </nav>
         </div>
       </header>
@@ -67,5 +82,12 @@ const items: { label: string; href: string; key: NonNullable<Props['active']> }[
         </div>
       </footer>
     </div>
+    <script is:inline>
+      document.addEventListener('click', (e) => {
+        document.querySelectorAll('details.about-menu[open]').forEach((d) => {
+          if (!d.contains(e.target)) d.removeAttribute('open');
+        });
+      });
+    </script>
   </body>
 </html>

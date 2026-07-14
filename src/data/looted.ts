@@ -268,7 +268,6 @@ export const urls = {
   home: '/',
   about: '/about/',
   gaps: '/about/gaps/',
-  claims: '/about/claims/',
   method: '/about/method/',
   steps: '/about/steps/',
   markings: '/markings/',

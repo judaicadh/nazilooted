@@ -2,7 +2,7 @@
 import { urls } from '../data/looted';
 
 export interface Props {
-  active: 'scope' | 'method' | 'steps' | 'gaps' | 'claims';
+  active: 'scope' | 'method' | 'steps' | 'gaps' | 'anatomy';
 }
 const { active } = Astro.props;
 
@@ -11,7 +11,7 @@ const items = [
   { label: 'The method', href: urls.method, key: 'method' },
   { label: 'The five steps', href: urls.steps, key: 'steps' },
   { label: 'What we cannot account for', href: urls.gaps, key: 'gaps' },
-  { label: 'Restitution & claims', href: urls.claims, key: 'claims' },
+  { label: 'Where to look', href: urls.anatomy, key: 'anatomy' },
 ];
 ---
 <nav style="display:flex;flex-wrap:wrap;gap:9px 20px;margin:0 0 30px;padding-bottom:16px;border-bottom:1px solid rgba(var(--inkrgb),.14)">
