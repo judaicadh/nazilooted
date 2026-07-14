@@ -49,7 +49,7 @@ const dropItem = 'display:block;padding:8px 12px;border-radius:5px;font:400 13px
   <body>
     <div style="min-height:100vh;background:var(--pp)">
       <header style="position:sticky;top:0;z-index:20;background:rgba(var(--pprgb),.94);backdrop-filter:blur(6px);border-bottom:1px solid rgba(var(--inkrgb),.14)">
-        <div style="max-width:1180px;margin:0 auto;padding:15px 40px;display:flex;justify-content:space-between;align-items:baseline;gap:24px">
+        <div class="pad-x hdr" style="max-width:1180px;margin:0 auto;padding:15px 40px;display:flex;justify-content:space-between;align-items:baseline;gap:24px">
           <a href={urls.home} style="text-decoration:none;display:flex;flex-direction:column;align-items:flex-start;gap:3px">
             <span style="font:600 18px/1 var(--display);letter-spacing:.055em;text-transform:uppercase;color:var(--ink)">Nazi Looted Books</span>
             <span style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)">at Penn Libraries</span>
@@ -68,16 +68,16 @@ const dropItem = 'display:block;padding:8px 12px;border-radius:5px;font:400 13px
         </div>
       </header>
 
-      <div style="max-width:1180px;margin:0 auto;padding:8px 40px 0">
+      <div class="pad-x" style="max-width:1180px;margin:0 auto;padding:8px 40px 0">
         <div style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--fn)">{crumb}</div>
       </div>
 
-      <main style="max-width:1180px;margin:0 auto;padding:26px 40px 90px">
+      <main class="pad-x" style="max-width:1180px;margin:0 auto;padding:26px 40px 90px">
         <slot />
       </main>
 
       <footer style="border-top:1px solid rgba(var(--inkrgb),.14);background:var(--sf2)">
-        <div style="max-width:1180px;margin:0 auto;padding:22px 40px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font:400 11.5px/1.5 'IBM Plex Mono',monospace;color:var(--fn)">
+        <div class="pad-x" style="max-width:1180px;margin:0 auto;padding:22px 40px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font:400 11.5px/1.5 'IBM Plex Mono',monospace;color:var(--fn)">
           <span>Provenance research &amp; scholarship by Bruce Nielsen, Ph.D. — Judaica Public Services Librarian &amp; Archivist, Penn Libraries (Katz Center for Advanced Judaic Studies)</span>
           <span>A site built by Judaica DH at Penn Libraries</span>
         </div>
