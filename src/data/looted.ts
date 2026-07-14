@@ -1,6 +1,8 @@
 // Data model + helpers for the Penn "Nazi Looted Books" site.
-// Ported from the Penn Looted Books design prototype. The record generator
-// is a deterministic seeded PRNG so register IDs are stable across builds.
+// The register (RECORDS) is ingested from the JCR/OAD markings spreadsheet
+// (src/data/records.json); the marking, step, case and source content is drawn
+// from Bruce Nielsen's provenance essay.
+import recordsData from './records.json';
 
 export type TierKey = 'direct' | 'namelist' | 'context' | 'possible';
 export type EvidenceKind = 'direct' | 'inferred' | 'possible';
@@ -37,6 +39,7 @@ export interface BookRecord {
   series: string;
   country: string;
   city: string;
+  call?: string;
   inCatalog: boolean;
   ownerSlug: string | null;
   owner: string | null;
