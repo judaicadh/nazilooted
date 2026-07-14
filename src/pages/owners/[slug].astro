@@ -14,7 +14,7 @@ const books = RECORDS.filter((r) => r.ownerSlug === owner.slug).map((r) => ({ id
   <div style="max-width:760px">
     <a href={urls.register} style="font:400 12.5px/1 var(--sans);color:var(--ac)">← The register</a>
 
-    <div style="margin-top:16px;display:grid;grid-template-columns:1fr 220px;gap:36px;align-items:start">
+    <div class="col-stack" style="margin-top:16px;display:grid;grid-template-columns:1fr 220px;gap:36px;align-items:start">
       <div>
         <div style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--fn)">Former owner</div>
         <h1 style="margin:8px 0 0;font:400 32px/1.2 var(--serif);letter-spacing:-.01em">{owner.name}</h1>

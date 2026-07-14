@@ -48,8 +48,12 @@ button { font-family: inherit; }
   .rail-sticky { position: static !important; max-height: none !important; overflow: visible !important; padding-right: 0 !important; }
   .about-menu > div { min-width: 200px !important; }
 }
+@media (max-width: 760px) {
+  .cards-grid { grid-template-columns: 1fr 1fr !important; }
+}
 @media (max-width: 480px) {
   .stack-xs { grid-template-columns: 1fr !important; gap: 6px !important; }
+  .cards-grid { grid-template-columns: 1fr !important; }
 }
 
 /* About dropdown */

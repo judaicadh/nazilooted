@@ -12,7 +12,7 @@ const hatch = 'height:180px;border:1px solid rgba(var(--inkrgb),.16);border-radi
 <Base title={`${marking.name} — Nazi Looted Books`} crumb={`/markings/${marking.slug}/`} active="markings">
   <a href={urls.markings} style="font:400 12.5px/1 var(--sans);color:var(--ac)">← All markings</a>
 
-  <div style="margin-top:16px;display:grid;grid-template-columns:1fr 320px;gap:44px;align-items:start">
+  <div class="col-stack" style="margin-top:16px;display:grid;grid-template-columns:1fr 320px;gap:44px;align-items:start">
     <div>
       <h1 style="margin:0;font:400 32px/1.15 var(--serif);letter-spacing:-.01em">{marking.name}</h1>
       <p style="margin:14px 0 0;max-width:560px;font:400 16.5px/1.6 var(--serif);color:var(--ink)">{marking.desc}</p>

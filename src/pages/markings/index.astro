@@ -11,7 +11,7 @@ const thumb = (hue: number) =>
 
   <p style="margin:14px 0 0;max-width:660px;font:400 14.5px/1.6 var(--serif);color:var(--mut)">There are three principal forms of provenance evidence — an <strong style="font-weight:500;color:var(--ink)">OAD stamp</strong>, a <strong style="font-weight:500;color:var(--ink)">JCR bookplate</strong>, and a <strong style="font-weight:500;color:var(--ink)">gutter source note</strong> — and a book may carry all three, or only one. On top of these, a book may bear one of more than a dozen Nazi confiscation stamps from the two offices that did the looting: the ERR (Rosenberg’s task force, gathering books for a planned institute in Frankfurt) and the RSHA (the SS security office that competed with it). A Nazi stamp alone is enough to prove a book was looted. RSHA stamps are essentially absent from this collection; the Nazi mark that does appear is the ERR’s.</p>
 
-  <div style="margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+  <div class="cards-grid" style="margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
     {MARKINGS.map((m) => (
       <a href={urls.marking(m.slug)} style="text-decoration:none;background:var(--sf);border:1px solid rgba(var(--inkrgb),.14);border-radius:4px;overflow:hidden;display:flex;flex-direction:column">
         <div style={thumb(m.hue)}></div>
