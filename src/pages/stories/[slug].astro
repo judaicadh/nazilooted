@@ -11,9 +11,9 @@ const recordHref = kase.recordId
   ? urls.record(kase.recordId)
   : (kase.recordLabel.toLowerCase().includes('gaps') ? urls.gaps : urls.register);
 ---
-<Base title={`${kase.title} — Nazi Looted Books`} crumb={`/cases/${kase.slug}/`} active="cases">
+<Base title={`${kase.title} — Nazi Looted Books`} crumb={`/stories/${kase.slug}/`} active="stories">
   <div style="max-width:680px">
-    <a href={urls.cases} style="font:400 12.5px/1 var(--sans);color:var(--ac)">← All cases</a>
+    <a href={urls.cases} style="font:400 12.5px/1 var(--sans);color:var(--ac)">← All stories</a>
     <h1 style="margin:16px 0 0;font:400 32px/1.2 var(--serif);letter-spacing:-.01em">{kase.title}</h1>
     <p style="margin:16px 0 0;font:400 18px/1.6 var(--serif);color:var(--ink)">{kase.lede}</p>
 
