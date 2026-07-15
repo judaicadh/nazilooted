@@ -17,3 +17,4 @@
 {"message":"items is not defined\n  Stack trace:\n    at eval (/Users/lauraeck/Github/lootedbooks/src/layouts/Base.astro:53:14)\n    [...] See full stack trace in the browser, or rerun with --verbose.","label":null,"level":"error"}
 {"message":"[200] /register/ 50ms","label":null,"level":"info"}
 {"message":"[200] /register/ 36ms","label":null,"level":"info"}
+{"message":"[200] /about/ 15ms","label":null,"level":"info"}
